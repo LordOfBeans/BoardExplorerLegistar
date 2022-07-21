@@ -141,6 +141,9 @@ class LegiSearch:
 		for item in self.json_data:
 			item[key] = value
 
+	def extend(self, other):
+		self.json_data.extend(other.json_data)
+
 	#Return a 2D list representing a spreadsheet based on keys in column input
 	#If key does not exist, fills space with an empty string
 	def toSheets(self, column_keys):

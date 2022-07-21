@@ -50,7 +50,7 @@ def createSpreadsheet(title, column_names):
 	}
 	new_spreadsheet = sheetsAPI.create(body=create_body, fields='spreadsheetId').execute()
 	id = new_spreadsheet['spreadsheetId']
-	data_range = "A2" + new_spreadsheet["range"][2:]
+	data_range = "A2:J1000"
 
 	#Create and format new sheets with only column names
 	column_values = []
@@ -148,7 +148,7 @@ def createSpreadsheet(title, column_names):
 	sheetsAPI.batchUpdate(spreadsheetId = id, body=update_body).execute()
 	with open('spreadsheetId.txt', 'w') as id_file:
 		id_file.write(id)
-	return RemoveSheet(id, [[]], [[]], data_range)
+	return RemoveSheet(id, [], [], data_range)
 
 #Returns a RemoveSheet object and reads id from 'spreadsheetId.txt'
 def getSheet():
