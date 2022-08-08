@@ -54,7 +54,7 @@ def createSpreadsheet(title, column_names):
 
 	#Create and format new sheets with only column names
 	column_values = []
-	for name in ['Removed'] + column_names:
+	for name in ['Remove'] + column_names:
 		cell_value = {
 			'userEnteredValue': {
 				'stringValue': name
