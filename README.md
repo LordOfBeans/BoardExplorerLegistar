@@ -97,7 +97,7 @@ except FileNotFoundError:
 county_sheet = county.toSheets(["Title", "Type", "Status", "Final Action Date", "GUID"])
 
 #The 5 parameter tells the addRows method to check for duplicates based upon the fifth item (zero-indexed), which is GUID.
-sheet.addRows(sheet_values, 5)
+sheet.addRows(county_sheet, 5)
 sheet.remove()
 sheet.write()
 ```
@@ -143,7 +143,7 @@ except FileNotFoundError:
 
 county_sheet = county.toSheets(["Title", "Type", "Status", "Final Action Date", "GUID"])
 
-sheet.addRows(county.sheet, 5)
+sheet.addRows(county_sheet, 5)
 sheet.remove()
 sheet.write()
 ```
