@@ -143,7 +143,7 @@ except FileNotFoundError:
 
 county_sheet = county.toSheets(["Title", "Type", "Status", "Final Action Date", "GUID"])
 
-sheet.addRows(sheet_values, 5)
+sheet.addRows(county.sheet, 5)
 sheet.remove()
 sheet.write()
 ```
